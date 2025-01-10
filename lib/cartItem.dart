@@ -3,12 +3,12 @@ import 'package:shopping_cart/item.dart';
 
 class CartItem extends StatefulWidget {
   final Item items;
-  final VoidCallback onQuantityChanged; // เพิ่มพารามิเตอร์ onQuantityChanged
+  final VoidCallback onQuantityChanged;
 
   const CartItem({
     super.key,
     required this.items,
-    required this.onQuantityChanged, // กำหนดในคอนสตรักเตอร์
+    required this.onQuantityChanged,
   });
 
   @override
@@ -29,14 +29,14 @@ class _CartItemState extends State<CartItem> {
       quantity = (quantity + change).clamp(0, double.infinity).toInt();
       widget.items.amount = quantity;
     });
-    widget.onQuantityChanged(); // เรียก callback เพื่ออัปเดตยอดรวม
+    widget.onQuantityChanged();
   }
 
   @override
   void didUpdateWidget(covariant CartItem oldWidget) {
     super.didUpdateWidget(oldWidget);
     setState(() {
-      quantity = widget.items.amount; // อัปเดตค่า quantity จาก item
+      quantity = widget.items.amount;
     });
   }
 

@@ -84,8 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             for (Item item in items)
               CartItem(
-                key: ValueKey(item
-                    .name), // เพิ่ม ValueKey เพื่อให้ Flutter จัดการสถานะได้ถูกต้อง
+                key: ValueKey(item.name),
                 items: item,
                 onQuantityChanged: _updateTotal,
               ),
